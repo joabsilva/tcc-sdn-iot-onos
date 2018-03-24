@@ -1,0 +1,7 @@
+NXST_FLOW reply (xid=0x4):
+ cookie=0x100002f9a6fcd, duration=12838.185s, table=0, n_packets=0, n_bytes=0, idle_age=12838, priority=5,arp actions=CONTROLLER:65535
+ cookie=0x10000df6e4369, duration=12838.183s, table=0, n_packets=435, n_bytes=26100, idle_age=1484, priority=40000,arp actions=CONTROLLER:65535
+ cookie=0x100005c2cb6b6, duration=12838.181s, table=0, n_packets=4138, n_bytes=335178, idle_age=2, priority=40000,dl_type=0x8942 actions=CONTROLLER:65535
+ cookie=0x10000380f5f7a, duration=12838.180s, table=0, n_packets=1616, n_bytes=262015, idle_age=9, priority=5,ip actions=CONTROLLER:65535
+ cookie=0x100006cd9b0f2, duration=3946.995s, table=0, n_packets=1404, n_bytes=126693, idle_age=2, priority=40000,dl_type=0x88cc actions=CONTROLLER:65535
+
