@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+#Autor: Joab de Araújo
+#Código para uso em aplicação IoT no Trabalho de Conclusão de Curso - TCC
+#Título: APLICAÇÃO DE REDES DEFINIDAS POR SOFTWARE EM INTERNET DAS COISAS
+#Data: 25/03/2018
 
 import RPi.GPIO as GPIO
 import time
