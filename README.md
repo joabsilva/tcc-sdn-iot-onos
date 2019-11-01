@@ -6,6 +6,6 @@
 
 Pinout scheme of the Raspberry Pi 3
 
-![](https://drive.google.com/file/d/16thwzfsJkCGBru3KK13cxg_3BsqLkjfF/view?usp=sharing)
+![](https://imgur.com/IBWxCAs)
 
 
