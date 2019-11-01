@@ -23,13 +23,15 @@ ftp_client=ssh.open_sftp()
 GPIO.setmode(GPIO.BCM)
 
 #Definindo variaveis para os pinos 
+
+servo_pin = 17 
+ledBranco=19
+ledAmarelo=20
+ledVerde=21
 mpin=22
 tpin=23
-ledVerde=21
-ledAmarelo=20
 ledVermelho=26
-ledBranco=19
-servo_pin = 17 
+
 
 #Definindo configuracoes para o sensor
 cap=0.000001
@@ -67,6 +69,14 @@ def set_angle(angle):
 	duty = deg_0_duty + (angle/180.0)* duty_range
 	pwm.ChangeDutyCycle(duty)
 
+# percebi que ha repeticao de codigo, refatorando...
+def outputGPIO(seq):
+	# a funcao pega a sequencia de acordo com a cor
+	# vermelho, amarelo, verde, branco
+	GPIO.output(ledVermelho, seq[0])
+	GPIO.output(ledAmarelo, seq[1])
+	GPIO.output(ledVerde, seq[2])
+	GPIO.output(ledBranco, seq[3])
 
 while True:
     GPIO.setup(mpin, GPIO.OUT) #Iniciar o pino 1 do sensor
@@ -91,10 +101,14 @@ while True:
 		if t > 3000:
 			print "Acima do limiar"
 			#deixa o motor em 0 graus
-			GPIO.output(ledVermelho, 0)
-			GPIO.output(ledAmarelo, 0)
-			GPIO.output(ledVerde, 0)
-			GPIO.output(ledBranco, 0)
+			# mudei a ordem pra que esta no metodo
+			# vermelho, amarelo, verde, branco 
+			outputGPIO([0,0,0,0])
+			# GPIO.output(ledVermelho, 0)
+			# GPIO.output(ledAmarelo, 0)
+			# GPIO.output(ledVerde, 0)
+			# GPIO.output(ledBranco, 0)
+			
 			set_angle(0)
 		if t >= 0 and t <= 3000:
 			
@@ -104,10 +118,10 @@ while True:
 				print(t)
 				ftp_client.put('caminho_local_do_arquivo', 'caminho_remoto_onde_ficara_o_arquivo') 
 				#exemplo: ftp_client.put('/home/raspberry/Documentos/led2.txt', '/home/joab/Documentos/ledAmarelo.txt')				
-				GPIO.output(ledVerde, 1)
-				GPIO.output(ledVermelho, 0)
-				GPIO.output(ledAmarelo, 0)
-				GPIO.output(ledBranco, 0)
+				# GPIO.output(ledVerde, 1)
+				# GPIO.output(ledVermelho, 0)
+				# GPIO.output(ledAmarelo, 0)
+				# GPIO.output(ledBranco, 0)
 				set_angle(180)
 				
 			if t > 750 and t <= 1500:
