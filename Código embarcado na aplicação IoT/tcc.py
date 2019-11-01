@@ -124,7 +124,7 @@ while True:
 				
 				print(t)
 				ftp_client.put('caminho_local_do_arquivo', 'caminho_remoto_onde_ficara_o_arquivo')
-				# vermelho, amarelo, verde, branco
+				# vermelho, amarelo*, verde, branco
 				outputGPIO([0,1,0,0])
 				# GPIO.output(ledAmarelo, 1)
 				# GPIO.output(ledVermelho, 0)
@@ -136,10 +136,12 @@ while True:
 				
 				print(t)
 				ftp_client.put('caminho_local_do_arquivo', 'caminho_remoto_onde_ficara_o_arquivo') 
-				GPIO.output(ledVermelho, 1)
-				GPIO.output(ledAmarelo, 0)
-				GPIO.output(ledVerde, 0)
-				GPIO.output(ledBranco, 0)
+				# vermelho*, amarelo, verde, branco
+				outputGPIO([1,0,0,0])
+				# GPIO.output(ledVermelho, 1)
+				# GPIO.output(ledAmarelo, 0)
+				# GPIO.output(ledVerde, 0)
+				# GPIO.output(ledBranco, 0)
 				set_angle(90)
 				
 			if t > 2250 and t <= 3000:
