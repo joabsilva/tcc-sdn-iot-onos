@@ -1,0 +1,1 @@
+# Configuração do Nó IoT
