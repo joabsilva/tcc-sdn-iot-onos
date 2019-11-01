@@ -15,8 +15,8 @@ Esquema de pinagem do Raspberry Pi 3
 
 - 1 Raspberry Pi 3 Model 3;
 - 1 protoboard;
-- 4 Resistores de 330 ohms;
-- 1 Capacitor cerâmico de $1\mu F$;
+- 4 Resistores de 3̉Ω;
+- 1 Capacitor cerâmico de 1μF;
 - 4 LEDs;
 - 1 servo motor;
 - Jumpers Macho/Macho e Macho/Fêmea.
