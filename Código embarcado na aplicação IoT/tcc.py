@@ -117,11 +117,9 @@ while True:
 				
 				print(t)
 				ftp_client.put('caminho_local_do_arquivo', 'caminho_remoto_onde_ficara_o_arquivo') 
-				#exemplo: ftp_client.put('/home/raspberry/Documentos/led2.txt', '/home/joab/Documentos/ledAmarelo.txt')				
-				# GPIO.output(ledVerde, 1)
-				# GPIO.output(ledVermelho, 0)
-				# GPIO.output(ledAmarelo, 0)
-				# GPIO.output(ledBranco, 0)
+				#exemplo: ftp_client.put('/home/raspberry/Documentos/led2.txt', '/home/joab/Documentos/ledAmarelo.txt')
+				# vermelho, amarelo, verde, branco
+				outputGPIO([0,0,1,0])
 				set_angle(180)
 				
 			if t > 750 and t <= 1500:
